@@ -1,0 +1,610 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Styling the Base Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      /* The Modal (background) */
+      .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+      }
+
+      iframe {
+        border: none;
+      }
+
+      /* The Close Button */
+      .close {
+          color: #FF0000;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+      }
+
+      #myBtn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+      }
+
+      .close:hover,
+      .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+      }
+    </style>
+    </head>
+  <body>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Stimulate mind</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">×</span>
+        <iframe src="../image-gallery.slider/no-jquery.html" width="100%" height="500px"></iframe>
+      </div>
+
+    </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+</script>
+
+    <div id="map"></div>
+    <script>
+
+
+      var map;
+      function initialize() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          scrollwheel: false,
+          draggable: false,
+          disableDefaultUI: true,
+          disableDoubleClickZoom: true,
+          streetViewControl: false,
+          center: new google.maps.LatLng(-35.320170, 149.133961),
+          mapTypeId: 'roadmap',
+          styles: [
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [
+                { color: '#000000' },
+                { weight: 1.6 }
+              ]
+            }, {
+              featureType: 'road',
+              elementType: 'labels',
+              stylers: [
+                { saturation: -100 },
+                { invert_lightness: true }
+              ]
+            }, {
+              featureType: 'landscape',
+              elementType: 'geometry',
+              stylers: [
+                { hue: '#ffff00' },
+                { gamma: 1.4 },
+                { saturation: 82 },
+                { lightness: 96 }
+              ]
+            }, {
+              featureType: 'poi.school',
+              elementType: 'geometry',
+              stylers: [
+                { hue: '#fff700' },
+                { lightness: -15 },
+                { saturation: 99 }
+              ]
+            }, {
+              featureType: 'poi',
+              elementType: 'geometry',
+              stylers: [
+                { visibility: 'off' }
+              ]
+            }, {
+              featureType: 'poi.school',
+              elementType: 'geometry',
+              stylers: [
+                { visibility: 'on' },
+                { hue: '#fff700' },
+                { lightness: -15 },
+                { saturation: 99 }
+              ]
+            }
+          ]
+        });
+
+        var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat: -35.319145, lng: 149.13231},
+                    map: map,
+                    icon: image
+                  });
+
+        var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat: -35.32018, lng: 149.131531},
+                    map: map,
+                    icon: image
+                  });
+
+
+
+
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321173,	lng:149.133168},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.319649,	lng:149.131909},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.318906,	lng:149.132104},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.319238,	lng:149.132392},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.318904,	lng:149.131901},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.319236,	lng:149.13221},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320348,	lng:149.134625},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.31999, lng:149.133689},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320933,	lng:149.133637},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320573,	lng:149.13372},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320019,	lng:149.132024},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.32175, lng:149.133464},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321654,	lng:149.13349},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321535,	lng:149.133511},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320252,	lng:149.130602},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321474,	lng:149.135028},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320302,	lng:149.135269},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321976,	lng:149.133417},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321869,	lng:149.133445},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.319298,	lng:149.130982},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.31942, lng:149.131437},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.31918,	lng:149.131562},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320255,	lng:149.134267},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.319806,	lng:149.132673},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321103, lng:149.134606},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320821,	lng:149.134663},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320288,	lng:149.131621},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320641,	lng:149.131988},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320956,	lng:149.132501},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321127,	lng:149.132992},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.32024,	lng:149.131408},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320433,	lng:149.131579},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.32062,	lng:149.131796},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320792,	lng:149.13202},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320972,	lng:149.132312},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321086,	lng:149.132579},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321189,	lng:149.132869},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.321284,	lng:149.133197},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.319557,	lng:149.132115},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.319634,	lng:149.132171},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.319879,	lng:149.13373},
+                    map: map,
+                    icon: image
+                  });
+          var image = '../shapesz/parkingfree.png';
+                  var beachMarker = new google.maps.Marker({
+                    position: {lat:-35.320141,	lng:149.134852},
+                    map: map,
+                    icon: image
+                  });
+
+
+          var image = '../shapesz/parkingfree.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.320823, lng: 149.132285},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokegym.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.322251, lng: 149.134416},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.321839, lng: 149.134035},
+            map: map,
+            icon: image
+          });
+
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.321190, lng: 149.133410},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.320660, lng: 149.133218},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.320980, lng: 149.132824},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.320438, lng: 149.133874},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokegym.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.320583, lng: 149.132400},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.319847, lng: 149.131403},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.323225, lng: 149.134462},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.320125, lng: 149.135525},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.320513, lng: 149.135372},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokegym.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.318305, lng: 149.133307},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.319583, lng: 149.132931},
+            map: map,
+            icon: image
+          });
+
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.319181, lng: 149.132588},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.318130, lng: 149.132213},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.318226, lng: 149.133800},
+            map: map,
+            icon: image
+          });
+
+          var image = '../shapesz/pokestop.png';
+          var beachMarker = new google.maps.Marker({
+            position: {lat: -35.318647, lng: 149.135399},
+            map: map,
+            icon: image
+          });
+
+
+          var styleArray = [
+            {
+              featureType: "all",
+              stylers: [
+                { visibility: "off" }
+              ]
+            },
+            {
+              featureType: "road",
+              stylers: [
+                { visibility: "on" }
+              ]
+            }
+          ];
+
+          map.setOptions({styles: styleArray});
+
+
+
+
+
+        for (var i = 0, feature; feature = features[i]; i++) {
+          addMarker(feature);
+        }
+      };
+
+
+
+
+    </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSLZIWNRcGztZ7Bfev7mSeq43rg88EszQ&callback=initialize">
+    </script>
+  </body>
+</html>
